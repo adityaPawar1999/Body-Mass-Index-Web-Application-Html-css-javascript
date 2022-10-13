@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css"> 
+    <script>
+        function myfun(){
+            var weight = document.getElementById('input-w').value;
+            var height = document.getElementById('input-h').value;
+
+            if(weight>=500){
+                alert("Please enter valid weight");
+            }else if(height>=1000){
+                alert("Please enter valid height");
+            }else{
+                var height_in_meter =(height/100);
+                var bmi = height_in_meter*height_in_meter;
+                var output = weight/bmi;
+                document.getElementById('output').innerHTML = Math.floor(output) ;
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Body Mass Index Calculator</div>
+        <div class="main">
+            <p class="p1">Enter your weight :</p>
+            <input type="text" id="input-w">
+            <p class="p2">Enter your height :</p>
+            <input type="text" id="input-h">  <br>  
+            <button onclick="myfun()">Calculate</button>
+            <h2 class="result">Result : <span id="output"></span></h2>
+        </div>
+    </div>
+    
+</body>
+</html>
